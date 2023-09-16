@@ -4,9 +4,9 @@ A CLI and GUI implementation of the Rush Hour puzzle game. Completed with two gr
 This project was an excellent opportunity to learn about the challenges of completing a coding project with team members. 
 
 Notable features of this project include: 
-- GUI interface
-- CLI interface
-- Backtracking algorithm used for the "solve" button in the GUI
+- GUI interface (\src\main\java\rushhour\view\RushHourGUI.java)
+- CLI interface (\src\main\java\rushhour\view\RushHourCLI.java)
+- Backtracking algorithm used for the "solve" button in the GUI, and "solve" command in the CLI 
 - test code for all methods!
 - adherence to the "Model View Controller" design pattern
 - detailed docstrings for each method!
