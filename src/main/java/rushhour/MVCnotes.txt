@@ -1,0 +1,82 @@
+/** Notes from Daphne - Implementing an MVC design
+ * Part 1: THE GUI - How MVC Works, Event Handler & Concrete Observer for the GUI
+ * Part 2: THE MODEL - How MVC Works
+ */
+
+
+**************************** Part 1 : T H E  G U I ********************************************
+
+    /** USING THE MVC DESIGN MODEL - THE GUI - HOW THIS MVC DESIGN MODEL WORKS:
+    * Step1: Create the EventHandler class needed to handle desired events executed in the GUI
+    *              (NOTE: May stub-out this class initially, and return on Step 3 to complete it.)
+    * Step2: Call the EventHandler (setOnAction(new EventHandler(args))) & REGISTER (pass-in) the concrete
+    *              observer (Changer) the MODEL will notify using the 'registration' method in the MODEL
+    *              (ex: setOnChange(new Observer(args)))
+    * Step3: EventHandler (or other action method) calls the method(s) in the MODEL associated with the
+    *              change occuring/initiated in the GUI (ex: button clicked); MODEL processes the requested change
+    * Step4: Once the MODEL updates, it notifies the (concrete) observer; In-turn the (concrete) observer processes
+    *              the MODEL updates, and changes the GUI as designed. (Note: Some changes may be handled in the
+    *              EventHandler or action methods)
+    * 
+    * IN THE GUI: 1) The button calls the EventHandler (RushHourEvent) & registers the concrete observer
+    *                  (RushHourChanger) with the MODEL (RushHour)
+    *              2) The EventHandler also calls the appropriate aciton method(s) in the GUI
+    *              2) The action method(s) then calls the method(s) in the MODEL associated with the change
+    *              3) The MODEL prcesses the change from the input (ie: move or reset) and either throws an Exception
+    *                 if invalid, or notifies the (concrete) observer of the change & provides the required info
+    *              3) The (concrete) observer interprets the change information from the MODEL & updates the SPOT(S)
+    *                 on the gameBoard. The action methods update the rest (ie: gameStatus & moveStatus Labels)
+    */
+
+
+    /* 
+    * EVENT HANDLER FOR THE GUI CLASS
+    * @EventHandler this class catches the ActionEvents that are tirggered by the user clicking
+    * on a button in the GUI. It determines the input type (ie: move made or reset board) and calls
+    * the appropraite action method(s) in the GUI.
+    * 
+    * NOTE: If the button that's clicked does NOT have an associated action, an Exception is thrown.
+    */
+
+
+ /* 
+ * CONCRETE OBSERVER "THE CHANGER" FOR THE GUI CLASS
+ * @ConcreteObserver this class implements the RushHourObserver interface. It contains methods to
+ * processes the changes made to the VEHICLES on the game board WITHIN the MODEL (RushHour). Then,
+ * it updates the VEHICLES as designed ON the GUI (RushHourGUI).
+ * 
+ * NOTE: All other updates to the GUI from the change are processed within the GUI.
+ */
+
+
+
+**************************** Part 2 : T H E  M O D E L ********************************************
+
+     /** USING THE MVC DESIGN MODEL - ADDING AN OBSERVER TO THE MODEL CLASS
+     * 
+     * (NOTE: This class is the MODEL CLASS for this program!)
+     * 
+     * Step1: Create an Observer INTERFACE - it should contain a method(s) that processes
+     *          changes made in the MODEL that need to be reflected in the GUI; Include parameters
+     *          that will be needed for a CONCRETE observer to process the changes.
+     * Step2: Add the observer (interface) OBJECT to the MODEL - this ensures any concrete
+     *          observer implemetning this interface can be used (ie: POLYMORPHISM)
+     *          >>> ex: private ObserverInterface observer;
+     * Step3: Add methods to SET & NOTIFY a concrete observer (see examples below):
+     *          >>> ex: setOnChange(ObserverInterface observer) {
+     *                      this.observer = observer;
+     *                  }
+     *          >>> ex: notifyObserver(--parameters from ObserverInterface method(s) --) {
+     *                     //verify assigned concerete observer != null
+     *                      //then, call method(s) in the observer to initiate the changes in the GUI
+     *                  }
+     * Step4: Add the "notifyObserver(args)" call(s) to any methods in the MODEL that CREATE
+     *          A CHANGE IN THE GUI (ie: methods that DO SOMETHING that the GUI now needs to
+     *          update and display the change)
+     * Step5: Create the CONCRETE Observer class - start by stubbing out the class (field(s)
+     *          and constructor) & the override method(s). Finish the observer once the GUI
+     *          has been implemented.
+     *          (NOTE: the fields & constructor args for concrete observers DO NOT need to
+     *          match those of the INTERFACE Observer (only the params of the OVERRIDE method(s)).
+     *          Will likely need to ADD the GUI to be updated as a FIELD and constructor PARAM!)
+     */

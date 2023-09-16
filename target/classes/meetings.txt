@@ -1,0 +1,75 @@
+Part 1 Meeting Planning Information:
+Meeting: Sat 4/1 @ 4pm on Discord
+    Focus: 
+        -> RushHour Class constructor
+        -> possible hashing for possMove algorithm
+        -> Game play design for CLI class
+        -> Assign Outstanding tasks
+
+    Task/Coding Division:
+        -> Coding RushHourCLI = Lennard
+        -> Coding RushHour Methods:
+            -- Constructor (file parser) = Emma -- DONE
+            -- moveVehicle = Daphne -- DONE
+            -- getPossibleMoves = Emma - doing later tonight - DONE
+            -- toString (printing game board) = Lennard -- DONE
+
+        -> Unit Testing:
+            -- Direction (enum) = Emma - DONE
+            -- Move (class) create a toString in the class 1st = Emma
+            -- Position (class) = Emma - DONE
+            -- Vehicle (class) = Daphne - DONE
+            -- RushHour (class) = Lenny - DONE
+            **CLI does NOT need to be tested via Unit Tests
+
+
+******************************************************************************
+Part 2 Meeting Planning Information (Mon, 4/3 to Sun, 4/9):
+Meetings:
+    -> Fri, 4/7 in class
+    -> Sat, 4/8 @ 6-8pm on Discord
+    -> Tues, 4/11 @ 6-7pm *(check-in meeting)* on Discord
+
+    Focus:
+        -> (Fri) GUI design & function
+        -> (Sat) Determine logic for GUI event handling/updating; 
+        -> (Sat) Divide coding tasks
+        -> (Tues) Fine Tune & Testing of GUI
+
+    Task/Coding Division:
+        -> Unit Testing Needed (overdue):
+            -- Move (class) create a toString in the class 1st = Emma >> DONE
+
+        -> Create the GUI = Daphne (to do for Saturday) >> DONE
+        -> EventHandling & Observer Methods:
+            - resetButton & resetGame() (event handler method) = Emma
+            - hintButton & getHint() (event handler method) = Lennard >> DONE
+            - vehicleFrontButton & moveVehicleForwards() (event handler method) = Lennard >> DONE
+            - vehicleBackButton & moveVehicleBackwards() (event handler method) = Lennard >> DONE
+            - vehicleMoved() (concrete observer method - updates board after vehicle moved) = Emma
+
+
+******************************************************************************
+Week 3 Meetings (Mon, 4/10 to Sun, 4/16):
+**Assignment released on Weds, due Mon @ midnight**
+-- Fri, 4/14 @ 5-6:50 *class time MAYBE longer*
+-- Sun, 4/16 @ TBD *(check-in meeting)*
+
+Thursday & Friday Tasks: 
+-> PSS activity >> DONE
+-> Review assignment >> DONE
+-> Update easy codes & stub-out methods
+-> Decide on logic to be used
+-> Assign Tasks & Determine timeline for completion
+
+Task/Coding Division:
+-> Unit Testing Needed:
+      --  RushHour (class) copy constructor (ensure doesn't update original) = Emma
+
+-> Update the Model *(needed for next steps)* :
+    -- RushHour (class) add copy constructor = Emma
+    -- RushHourSolver (class) = Emma
+
+-> Update the Views
+    -- Update CLI (class) to use the Backtracker solve() = Lennard
+    -- Update GUI (class) to use the Backtracker solve() = Daphne

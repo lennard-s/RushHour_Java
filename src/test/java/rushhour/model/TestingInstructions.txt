@@ -1,0 +1,8 @@
+REQUIREMENT #2
+You must write JUnit unit tests for all classes in the rushhour.model package. 
+You should attempt to make your tests as thorough as possible. In general, the 
+team member that creates a class should be responsible for testing it. 
+
+You do not need to write JUnit tests for:
+    >> RushHourSolver (the Configuration class) 
+    >> or classes in the rushhour.view package!!
